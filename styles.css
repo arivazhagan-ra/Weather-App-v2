@@ -1,11 +1,46 @@
 
-        .hidden{
-            animation: shake 0.5s ease-in-out 1;
-        }
-        @keyframes shake {
-            0% { transform: translate(10px, 0); }
-            25% { transform: translate(0px, -10px); }
-            50% { transform: translate(20px, 10px); }
-            75% { transform: translate(10px, -10px); }
-            100% { transform: translate(-10px, 0); }
-        }
+  .hidden {
+    animation: shake 0.5s ease-in-out 1;
+}
+
+@keyframes shake {
+    0% { transform: translate(10px, 0); }
+    25% { transform: translate(0px, -10px); }
+    50% { transform: translate(20px, 10px); }
+    75% { transform: translate(10px, -10px); }
+    100% { transform: translate(-10px, 0); }
+}
+
+/* media query */
+@media only screen and (max-width: 768px) {
+    
+    #card {
+        width: 90% !important;
+    }
+    .footer{
+        flex-direction: row;
+        width: 100%;
+        gap: 10px;
+    }
+    .footer > div {
+        width: 50% !important;
+    }
+}
+@media only screen and (max-width: 448px) {
+    .container{
+        width: 100% !important;
+        padding: 0 !important;
+       
+    }
+    #card {
+        width: 80% !important;
+    }
+    .footer{
+        flex-direction: column;
+        width: 100%;
+        gap: 10px;
+    }
+    .footer > div {
+        width: 50% !important;
+    }
+}
