@@ -20,14 +20,3 @@ HTML5
 CSS3 (Flexbox, responsive layout)
 
 JavaScript (API fetching, DOM manipulation)
-
-OpenWeather API
-
-🛠 How to Run
-Clone this repository
-
-bash
-Copy
-Edit
-git clone https://github.com/arivazhagan-ra/Weather-App-v2.git
-Open index.html in your browser
