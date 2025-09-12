@@ -13,24 +13,28 @@ let url = `https://api.openweathermap.org/data/2.5/weather?units=metric&appid=`+
 form.addEventListener('submit', (e) => {
     e.preventDefault();
     const userInput = search.value.trim();
-
     // Basic validation: check for empty or numeric input
     if (userInput === "") {
         alert("Please enter a city name");
-        return;
+         cards.classList.add("hidden");
+    setTimeout(() => {
+        cards.classList.remove("hidden");
+    }, 1000);
+    return;
     }
-
     // Reject purely numeric or invalid input
     if (!/^[a-zA-Z\s]+$/.test(userInput)) {
         alert("Please enter a valid city name");
         description.textContent = "Please enter a valid city name";
-        return;
+         cards.classList.add("hidden");
+    setTimeout(() => {
+        cards.classList.remove("hidden");
+    }, 1000);
+    return;
     }
-
     setWeather(userInput);
     console.log("Fetching weather data...");
 });
-
 search.addEventListener('keydown', (e) => {
     if (e.key === 'Enter') {
         e.preventDefault();
@@ -53,12 +57,6 @@ function setWeather() {
                 humidity.textContent = data.main.humidity+ "%";
                 pressure.textContent = data.main.pressure+ "hPa";
             }
-            else if (!isNaN(userInput)) {
-                alert("Please enter a valid city name");
-                description.textContent = "Please enter a valid city name";
-                return;
-            } 
-            
             else{
                 city.querySelector("h4").textContent = "City Not Found";
                 temperature.querySelector('span').textContent = "";
@@ -67,12 +65,10 @@ function setWeather() {
                 humidity.textContent = "";
                 pressure.textContent = "";
                 cards.classList.add("hidden");
-
                 setTimeout(()=>{
                     cards.classList.remove("hidden");
                 },1000)
             }
-
             search.value = "";
         })
 }
