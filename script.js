@@ -10,7 +10,9 @@ let pressure = document.getElementById("pressure");
 let blurLayer = document.getElementById("blurLayer");
 let loader = document.getElementById("loader");
 
-let id="3758104ac86bfb4d17dfa1671332c3c1";
+// Paste your api key
+let id="your api ket here";
+
 let url = `https://api.openweathermap.org/data/2.5/weather?units=metric&appid=`+id;
 form.addEventListener('submit', (e) => {
     e.preventDefault();
